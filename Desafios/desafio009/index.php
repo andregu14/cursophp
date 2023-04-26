@@ -9,28 +9,11 @@
 </head>
 <body>
     <?php 
-    $num1 = $_GET['num1'] ?? 1;
-    $peso1 = $_GET['peso1'] ?? 1;
-    $num2 = $_GET['num2'] ?? 1;
-    $peso2 = $_GET['peso2'] ?? 1;
+    $num1 = $_GET['num1'] ?? "";
+    $peso1 = $_GET['peso1'] ?? "";
+    $num2 = $_GET['num2'] ?? "";
+    $peso2 = $_GET['peso2'] ?? "";
     
-    if ($peso1 == 0 and $peso2 == 0):
-        $peso1 = 1;
-        $peso2 = 1;
-    endif;
-
-    if ($peso1 == null):
-        $peso1 = 1;
-    endif;
-    if ($peso2 == null):
-        $peso2 = 1;
-    endif;
-    if ($num1 == null):
-        $num1 = 0;
-    endif;
-    if ($num2 == null):
-        $num2 = 0;
-    endif;
 
     $media_simp = ($num1 + $num2) / 2;
     $media_pond = (($num1 * $peso1) + ($num2 * $peso2)) / ($peso1 + $peso2);
@@ -40,13 +23,13 @@
         <h2>Médias Aritméticas</h2>
         <form action="<?=$_SERVER['PHP_SELF']?>" method="get">
         <label for="num1">1º Valor:</label>
-        <input type="number" name="num1" id="num1" value="<?=$num1?>" step="0.01">
+        <input type="number" name="num1" id="num1" value="<?=$num1?>" step="0.01" required>
         <label for="peso1">1º Peso:</label>
-        <input type="number" name="peso1" id="peso1" value="<?=$peso1?>">
+        <input type="number" name="peso1" id="peso1" value="<?=$peso1?>" required min="1">
         <label for="num2">2º Valor:</label>
-        <input type="number" name="num2" id="num2" value="<?=$num2?>" step="0.01">
+        <input type="number" name="num2" id="num2" value="<?=$num2?>" step="0.01" required>
         <label for="peso2">2º Peso:</label>
-        <input type="number" name="peso2" id="peso2" value="<?=$peso2?>">
+        <input type="number" name="peso2" id="peso2" value="<?=$peso2?>" required min="1">
         <input type="submit" value="Calcular Médias">
         </form>
     </main>
