@@ -18,7 +18,22 @@
         $peso1 = 1;
         $peso2 = 1;
     endif;
+
+    if ($peso1 == null):
+        $peso1 = 1;
+    endif;
+    if ($peso2 == null):
+        $peso2 = 1;
+    endif;
+    if ($num1 == null):
+        $num1 = 0;
+    endif;
+    if ($num2 == null):
+        $num2 = 0;
+    endif;
+
     $media_simp = ($num1 + $num2) / 2;
+    $media_pond = (($num1 * $peso1) + ($num2 * $peso2)) / ($peso1 + $peso2);
     
     ?>
     <main>
@@ -40,7 +55,7 @@
         <p>Analisando os valores <?=$num1 . " e " . $num2?>:
         <ul>
             <li>A <strong>Média Aritmética Simples</strong> entre os valores é igual a <?=number_format($media_simp, 2, ",")?>. </li>
-            <li>A <strong>Média Aritmética Ponderada</strong> considerando os pesos <?=$peso1 . " e " . $peso2?> é igual a <br> <?=number_format((($num1 * $peso1) + ($num2 * $peso2)) / ($peso1 + $peso2), 2, ",")?>.
+            <li>A <strong>Média Aritmética Ponderada</strong> considerando os pesos <?=$peso1 . " e " . $peso2?> é igual a <?=number_format($media_pond, 2, "," , ".") ?>.
             </li>
         </ul>
         </p>
