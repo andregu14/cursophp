@@ -31,7 +31,7 @@
         //Mostra o resultado
         echo "<br>Seus " . numfmt_format_currency($padrao, $real, "BRL") . " equivalem a <strong>" . numfmt_format_currency($padrao, $conv,"USD") . "*</strong ><p><em>*Utilizando dados do ";
         ?>
-            <em><a href="https://www.bcb.gov.br/" target="_blank">Banco Central do Brasil</a></p>
+            <em><a href="https://www.bcb.gov.br/" target="_blank" rel="external">Banco Central do Brasil</a></p>
             
             <p>
             <button onclick="javascript:history.go(-1)">Voltar</button>
