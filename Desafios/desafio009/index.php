@@ -10,13 +10,13 @@
 <body>
     <?php 
     $num1 = $_GET['num1'] ?? "";
-    $peso1 = $_GET['peso1'] ?? "";
+    $peso1 = $_GET['peso1'] ?? "1";
     $num2 = $_GET['num2'] ?? "";
-    $peso2 = $_GET['peso2'] ?? "";
+    $peso2 = $_GET['peso2'] ?? "1";
     
 
-    $media_simp = ($num1 + $num2) / 2;
-    $media_pond = (($num1 * $peso1) + ($num2 * $peso2)) / ($peso1 + $peso2);
+    $media_simp = (intval($num1) + intval($num2)) / 2;
+    $media_pond = ((intval($num1) * intval($peso1)) + (intval($num2) * intval($peso2))) / (intval($peso1) + intval($peso2));
     
     ?>
     <main>
