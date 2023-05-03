@@ -27,7 +27,7 @@
     </main>
     <section>
         <h2>Resultado</h2>
-        <p>Quem nasceu em <?=$ano?> tera <strong><?=$valor?> anos</strong> no ano <?=$ano2?>!
+        <p>Quem nasceu em <?=$ano?> vai ter <strong><?=$valor?> anos</strong> em <?=$ano2?>!
         
         </p>
     </section>
