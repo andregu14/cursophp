@@ -18,7 +18,6 @@
 
             echo "Bem vindo ao meu site, <strong> 
             $nome $sobrenome</strong>."
-        
         ?>
         <p><a href="javascript:history.go(-1)">Voltar para a pagina anterior"></a></p>
     </main>
