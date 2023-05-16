@@ -29,8 +29,6 @@
         $soma = $valor1 + $valor2;
         echo "<p>A soma entre os valores e <strong>igual a $soma</strong></p>"
         ?>
-
     </section>
-    
 </body>
 </html>
