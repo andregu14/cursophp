@@ -11,7 +11,7 @@
     <?php 
         $ano = $_REQUEST['ano'] ?? '2000';
         $ano2 = $_REQUEST['ano2'] ?? date("Y");
-        // calcula anos
+        // calcula idade
         $valor = intval($ano2) - intval($ano);
     ?>
     <main>
