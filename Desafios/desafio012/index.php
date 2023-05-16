@@ -36,7 +36,6 @@
                     <li><?=$segundos % 60?> segundos</li>
                     
                 </ul>
-
         </p>
     </section>
 </body>
