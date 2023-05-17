@@ -10,7 +10,8 @@
 <body>
     <main>
         <h1>Resultado Final</h1>
-        <?php 
+        <?php
+            // comentario PHP
             $numero = $_GET["numero"];
             $antecessor = $numero - 1;
             $sucessor = $numero + 1;
