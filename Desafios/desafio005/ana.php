@@ -16,7 +16,7 @@
         $num_int = intval($num);
         $num_float = $num - $num_int;
         
-
+        // Os calculos sao feitos dentro das str
         echo "O numero digitado foi <strong>" . number_format($num,3,",",".") . "</strong>";
         echo "<p>A parte inteira do numero e <strong>" . number_format($num_int,0,"",".") . "</strong>";
         echo "<br>A parte fracionada do numero e <strong>". number_format($num_float,3,",")  ."</strong></p>";
