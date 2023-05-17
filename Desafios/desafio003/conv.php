@@ -13,6 +13,7 @@
         <?php 
         $real = $_GET["real"] ?? 0;
         $dolar = 5.06;
+        // Formato de numeros para pt_br
         $padrao = numfmt_create("pt_BR",NumberFormatter::CURRENCY);
         
         
