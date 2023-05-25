@@ -9,9 +9,8 @@
 </head>
 <body>
     <?php 
-        $preco = $_REQUEST['preco'] ?? 0;
-        $porcentagem = $_REQUEST['porcentagem'] ?? 1;
-
+        $preco = $_REQUEST['preco'] ?? '0';
+        $porcentagem = $_REQUEST['porcentagem'] ?? '0';
     ?>
     <main>
         <h2>Reajustador de Preços</h2>
@@ -20,7 +19,7 @@
         <input type="number" name="preco" id="preco" min="0.10" step="0.01" value="<?=$preco?>">
         <label for="porcentagem">Qual será o percentual de reajuste? (<span id="p">?</span>%)</label>
         <div class="slidecontainer">
-            <input type="range" min="0" max="100" id="reaj" step="1" value="<?=$porcentagem?>" oninput="mudaValor()">
+            <input type="range" min="0" max="100" id="porcentagem" name="porcentagem" step="1" value="<?=$porcentagem?>" oninput="mudaValor()">
         </div>
         <input type="submit" value="Reajustar">
         </form>
@@ -30,11 +29,14 @@
         <?php 
         $valor = ($porcentagem / 100) * $preco;
         $novoValor = $valor + $preco;
-        echo "O produto que custava R\$" . number_format($preco,2,",",".") . ", com <strong> $porcentagem% de aumento </strong> vai passar a custar <strong> R\$" .number_format($novoValor,2,",",".") . " </strong> a partir de agora."?>
+        echo "O produto que custava R\$" . number_format($preco,2,",",".") . ", com <strong> $porcentagem% de aumento </strong> vai passar a custar <strong> R\$" .number_format($novoValor,2,",",".") . " </strong> a partir de agora."
+        ?>
     </section>
     <script>
+        mudaValor()
+
         function mudaValor() {
-            p.innerText = reaj.value
+            p.innerText = porcentagem.value
         }
     </script>
 </body>
