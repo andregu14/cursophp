@@ -36,8 +36,9 @@
     <section>
         <h2>Resultado do Reajuste</h2>
         <?php 
-        $valor = ($porcentagem / 100) * $preco + $preco;
-        echo "O produto que custava R\$" . number_format($preco,2,",",".") . ", com <strong> $porcentagem% de aumento </strong> vai passar a custar <strong> R\$" .number_format($valor,2,",",".") . " </strong> a partir de agora."?>
+        $valor = ($porcentagem / 100) * $preco;
+        $novoValor = $valor + $preco;
+        echo "O produto que custava R\$" . number_format($preco,2,",",".") . ", com <strong> $porcentagem% de aumento </strong> vai passar a custar <strong> R\$" .number_format($novoValor,2,",",".") . " </strong> a partir de agora."?>
     </section>
 </body>
 </html>
