@@ -10,7 +10,7 @@
 <body>
     <?php 
         $preco = $_REQUEST['preco'] ?? 0;
-        $porcentagem = $_REQUEST['porcentagem'] ?? 0;
+        $porcentagem = $_REQUEST['porcentagem'] ?? 1;
 
     ?>
     <main>
@@ -18,9 +18,9 @@
         <form action="<?=$_SERVER['PHP_SELF']?>" method="get">
         <label for="preco">Preço do produto (R$):</label>
         <input type="number" name="preco" id="preco" min="0.10" step="0.01" value="<?=$preco?>">
-        <label for="porcentagem">Qual será o percentual de reajuste? (<span id="p"></span>%)</label>
+        <label for="porcentagem">Qual será o percentual de reajuste? (<span id="p">?</span>%)</label>
         <div class="slidecontainer">
-            <input type="range" min="0" max="100" value="<?=$porcentagem?>" class="slider"  name="porcentagem" id="myRange">
+            <input type="range" min="0" max="100" id="reaj" step="1" value="<?=$porcentagem?>" oninput="mudaValor()">
         </div>
         <input type="submit" value="Reajustar">
         </form>
@@ -33,12 +33,9 @@
         echo "O produto que custava R\$" . number_format($preco,2,",",".") . ", com <strong> $porcentagem% de aumento </strong> vai passar a custar <strong> R\$" .number_format($novoValor,2,",",".") . " </strong> a partir de agora."?>
     </section>
     <script>
-        var slider = document.getElementById("myRange");
-        var output = document.getElementById("p");
-        output.innerHTML = slider.value;
-        slider.oninput = function() {
-            output.innerHTML = this.value;
+        function mudaValor() {
+            p.innerText = reaj.value
         }
-        </script>
+    </script>
 </body>
 </html>
