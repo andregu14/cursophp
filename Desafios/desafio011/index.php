@@ -6,6 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Desafio PHP</title>
     <link rel="stylesheet" href="style.css">
+    <style>
+        input#porcentagem {
+            padding: 0px;
+            margin: 1px;
+        }
+    </style>
 </head>
 <body>
     <?php 
@@ -15,13 +21,13 @@
     <main>
         <h2>Reajustador de Preços</h2>
         <form action="<?=$_SERVER['PHP_SELF']?>" method="get">
-        <label for="preco">Preço do produto (R$):</label>
-        <input type="number" name="preco" id="preco" min="0.10" step="0.01" value="<?=$preco?>">
-        <label for="porcentagem">Qual será o percentual de reajuste? (<span id="p">?</span>%)</label>
-        <div class="slidecontainer">
-            <input type="range" min="0" max="100" id="porcentagem" name="porcentagem" step="1" value="<?=$porcentagem?>" oninput="mudaValor()">
-        </div>
-        <input type="submit" value="Reajustar">
+            <label for="preco">Preço do produto (R$):</label>
+            <input type="number" name="preco" id="preco" min="0.10" step="0.01" value="<?=$preco?>">
+            <label for="porcentagem">Qual será o percentual de reajuste? (<span id="p">?</span>%)</label>
+            <div class="slidecontainer">
+                <input type="range" min="0" max="100" id="porcentagem" name="porcentagem" step="1" value="<?=$porcentagem?>" oninput="mudaValor()">
+            </div>
+            <input type="submit" value="Reajustar">
         </form>
     </main>
     <section>
