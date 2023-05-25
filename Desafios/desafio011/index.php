@@ -20,7 +20,7 @@
         <input type="number" name="preco" id="preco" step="0.01" value="<?=$preco?>">
         <label for="porcentagem">Qual será o percentual de reajuste? (<span id="demo"></span>%)</label>
         <div class="slidecontainer">
-            <input type="range" min="1" max="100" value="<?=$porcentagem?>" class="slider"  name="porcentagem" id="myRange">
+            <input type="range" min="0" max="100" value="<?=$porcentagem?>" class="slider"  name="porcentagem" id="myRange">
         </div>
         <script>
         var slider = document.getElementById("myRange");
