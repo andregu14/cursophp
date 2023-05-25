@@ -17,7 +17,7 @@
         <h2>Reajustador de Preços</h2>
         <form action="<?=$_SERVER['PHP_SELF']?>" method="get">
         <label for="preco">Preço do produto (R$):</label>
-        <input type="number" name="preco" id="preco" step="0.01" value="<?=$preco?>">
+        <input type="number" name="preco" id="preco" min="0.10" step="0.01" value="<?=$preco?>">
         <label for="porcentagem">Qual será o percentual de reajuste? (<span id="demo"></span>%)</label>
         <div class="slidecontainer">
             <input type="range" min="0" max="100" value="<?=$porcentagem?>" class="slider"  name="porcentagem" id="myRange">
